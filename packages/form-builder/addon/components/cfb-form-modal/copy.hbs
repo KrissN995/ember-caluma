@@ -1,0 +1,26 @@
+<UkModal @visible={{@visible}} @onHide={{@onCloseForm}} as |modal|>
+    <modal.header>
+        <h2 class="uk-modal-title">Make a copy of {{@oldName}}?
+        </h2>
+    </modal.header>
+    <modal.body>
+
+        <ValidatedForm @model={{changeset this.data this.Validations}} @on-submit={{this.copyForm}} as |f|>
+            <f.input @name="name" @label='Name' @required={{true}} />
+            <f.input @name="slug" @label='Slug' @required={{true}} />
+            <f.submit class="uk-margin-small" @label="Add" />
+        </ValidatedForm>
+        {{!-- <input class="uk-input" type="text" placeholder="Name" value={{this.name}} {{on "input"
+            this.updateName}} />
+
+        <input class="uk-input" type="text" placeholder="Slug" value={{this.slug}} {{on "input" this.updateSlug}} />
+
+        <UkButton @color="primary" @disabled={{and (not this.name) (not this.slug) }} class="uk-flex uk-flex-middle"
+            {{on "click" this.copyForm}}>
+            Add
+        </UkButton>
+        <UkButton @color="secondary" class="uk-flex uk-flex-middle" {{on "click" this.cancel}}>
+
+        </UkButton> --}}
+    </modal.body>
+</UkModal>

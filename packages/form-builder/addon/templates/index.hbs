@@ -3,6 +3,16 @@
   @category={{this.category}}
   @onNewForm={{this.newForm}}
   @onEditForm={{this.editForm}}
+  @onCopyForm={{this.copyForm}}
   @onUpdateSearch={{fn (mut this.search)}}
   @onUpdateCategory={{fn (mut this.category)}}
 />
+
+{{#if this.visible}}
+<CfbFormModal::Copy
+@oldName={{this.oldName}}
+@oldSlug={{this.oldSlug}}
+@visible={{this.visible}}
+@onCloseForm={{this.closeForm}}
+/>
+{{/if}}

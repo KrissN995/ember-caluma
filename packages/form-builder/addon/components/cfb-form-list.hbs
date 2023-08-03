@@ -38,6 +38,7 @@
         data-test-form-list-item={{item.slug}}
         @item={{item}}
         @onEditForm={{@onEditForm}}
+        @onCopyForm={{@onCopyForm}}
       />
     {{/each}}
     {{#if this.formsQuery.isLoading}}

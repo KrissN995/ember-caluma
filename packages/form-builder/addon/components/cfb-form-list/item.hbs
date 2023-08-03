@@ -15,5 +15,12 @@
       {{on "click" (fn (optional @onEditForm) @item)}}
     >
     </button>
+    <button
+    type="button"
+    uk-icon="copy"
+    class="uk-icon-button"
+    {{on "click" (fn @onCopyForm @item)}}>
+
+    </button>
   </span>
 </li>

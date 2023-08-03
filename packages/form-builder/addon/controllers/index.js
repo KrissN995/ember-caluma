@@ -10,6 +10,9 @@ export default class IndexController extends Controller {
 
   @tracked search = "";
   @tracked category = "active";
+  @tracked oldName='';
+  @tracked oldSlug='';
+  @tracked visible=false;
 
   @action
   newForm() {
@@ -19,5 +22,19 @@ export default class IndexController extends Controller {
   @action
   editForm({ slug }) {
     this.router.transitionTo("edit", slug);
+  }
+
+  @action
+  closeForm(){
+    this.visible=false;
+    console.log('did it enter the close form');
+  }
+
+  @action
+  copyForm({slug, name}){
+  this.oldName=name;
+  this.oldSlug=slug;
+  this.visible=true;
+  console.log('did it update the value', this.visible);
   }
 }
